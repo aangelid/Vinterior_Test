@@ -4,16 +4,44 @@
 #Comments: ...
 
 class Checkout
-	items = {"001" => 9.25, "002" => 45.00, "003" => 19.95}
+	def initialize(promotional_rules = [])
+        @pricing = Pricing.new(promotional_rules)
+        @basket = []
+    end
 
-	def initialize(promotional_rules)
-        @promotional_rules = promotional_rules
+    def basket
+    	@basket
+    end
+
+    def pricing
+    	@pricing
     end
 
     def total
-    	total_price = 0.00
-    	basket
+    	total = 0.00
+    	basket.each do |item|
 
+    end
+
+    def subtotal
+    	subtotal = 0.00
+    	basket.each do |item| 
+    		subtotal += item.price
+    	subtotal
+  	end
+
+    def scan(item)
+    	basket.add(item)
+    end
+
+    def countBasket(product_code)
+    	count = 0
+		basket.each do |item|
+      		if item.code == product_code
+      			count += 1 
+      		end
+      	end
+      	count
     end
 end
 
