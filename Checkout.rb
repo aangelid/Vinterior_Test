@@ -19,16 +19,20 @@ class Checkout
 
     def total
     	total = 0.00
-    	basket.each do |item|
-
-    end
-
-    def subtotal
     	subtotal = 0.00
+
     	basket.each do |item| 
     		subtotal += item.price
-    	subtotal
-  	end
+    	end
+
+    	basket.each do |item|
+    		item_count = countBasket(item.product_code)
+    		subtotal += pricing.price_item(item, item_count)
+    	end
+
+    	total = pricing.apply_proms(subtotal)
+    	total
+    end
 
     def scan(item)
     	basket.add(item)
@@ -37,7 +41,7 @@ class Checkout
     def countBasket(product_code)
     	count = 0
 		basket.each do |item|
-      		if item.code == product_code
+      		if item.product_code == product_code
       			count += 1 
       		end
       	end

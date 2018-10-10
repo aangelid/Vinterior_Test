@@ -9,14 +9,14 @@ class Pricing
 	end
 
 	def rules
-		@rules = rules
+		@rules
 	end
 
 	def price_item(item, count)
     	discounted_price = nil
    	 	rules.each do |rule|
-      		if rule.type == PromRule::TYPE[:over_sixty]
-        		discounted_price = rule.apply(item.product_code, count)
+      		if rule.type == PromRule::promotion[:over_sixty]
+        		
       		end
     	end
 
@@ -27,4 +27,7 @@ class Pricing
     	end
   	end
 
+  	def apply_proms
+
+  	end
 end
