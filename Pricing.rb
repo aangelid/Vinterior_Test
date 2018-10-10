@@ -1,4 +1,4 @@
-#Vinterior Coding Test - Checkout
+#Vinterior Coding Test - Pricing
 #Author: Angelos Angelides
 #Date: 10/10/2018
 #Comments: ...

@@ -1,4 +1,4 @@
-#Vinterior Coding Test - Checkout
+#Vinterior Coding Test - PromRules
 #Author: Angelos Angelides
 #Date: 10/10/2018
 #Comments: Need a way of storing existing rules (and adding promotional rules later?). 
